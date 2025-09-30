@@ -90,8 +90,6 @@ export class UserService {
     }
 
     async validatePassword(usuario: Usuario, contrasenaPlana: string): Promise<void> {
-        console.log("aqiiii", usuario)
-        console.log("aqiiii", contrasenaPlana)
         const isValid = await bcrypt.compare(contrasenaPlana, usuario.contrasena);
         if (!isValid) throw new UnauthorizedException('Credenciales incorrectas');
     }

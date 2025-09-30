@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Factura } from './entities/factura.entity';
 import { CreateFacturaDto } from './dto/crear-factura.dto';
-import { UpdateFacturaDto } from './dto/actualizar-factura.dto';
 import { AgregarDetalleDto } from './dto/agregar-detalle-dto';
 import { FacturaDetalleService } from '../factura-detalle/factura-detalle.service';
 import { FacturaDetalle } from '../factura-detalle/entities/factura-detalle.entity';
@@ -41,7 +40,6 @@ export class FacturaService {
   async addDetail(
     facturaId: number,
     addDetailDto: AgregarDetalleDto,
-    userId: string
   ): Promise<FacturaDetalle> {
     const factura = await this.facturaRepository.findOne({ where: { id: facturaId } });
 

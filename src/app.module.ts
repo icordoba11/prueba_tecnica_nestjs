@@ -5,6 +5,8 @@ import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/usuario.module';
 import { FacturaModule } from './modules/factura/factura.module';
 import { FacturaDetalleModule } from './modules/factura-detalle/factura-detalle.module';
+import { APP_FILTER } from '@nestjs/core';
+import { AllExceptionsFilter } from './common/exceptions-filter';
 
 @Module({
   imports: [
@@ -30,5 +32,11 @@ import { FacturaDetalleModule } from './modules/factura-detalle/factura-detalle.
     FacturaModule,
     FacturaDetalleModule
   ],
+  providers: [
+    {
+      provide: APP_FILTER,
+      useClass: AllExceptionsFilter,
+    },
+  ]
 })
 export class AppModule { }

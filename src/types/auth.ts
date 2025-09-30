@@ -1,5 +1,3 @@
-
-
 export interface AuthResponse {
   user: {
     id: string;
