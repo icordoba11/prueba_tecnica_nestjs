@@ -1,4 +1,4 @@
-import { AuditEntity } from "src/common/audity.entity";
+import { AuditEntity } from "src/common/audit.entity";
 import { FacturaDetalle } from "src/modules/factura-detalle/entities/factura-detalle.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 

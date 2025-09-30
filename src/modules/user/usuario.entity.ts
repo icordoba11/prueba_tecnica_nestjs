@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { AuditEntity } from 'src/common/audity.entity';
+import { AuditEntity } from 'src/common/audit.entity';
 
 @Entity('usuario')
 export class Usuario extends AuditEntity {
