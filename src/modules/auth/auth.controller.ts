@@ -17,20 +17,6 @@ export class AuthController {
   @ApiOperation({ summary: 'Registrar un usuario', description: 'Crea un usuario nuevo en el sistema' })
   @ApiResponse({ status: 201, description: 'Usuario creado correctamente.' })
   @ApiResponse({ status: 400, description: 'Error en los datos enviados.' })
-  @ApiBody({
-    type: RegisterDto,
-    examples: {
-      default: {
-        summary: 'Ejemplo de registro',
-        value: {
-          nombre: 'string',
-          apellido: 'string',
-          email: 'string',
-          contrasena: 'string',
-        },
-      },
-    },
-  })
   async register(@Body() registerDto: RegisterDto) {
     return this.authService.register(registerDto);
   }
@@ -40,15 +26,6 @@ export class AuthController {
   @ApiOperation({ summary: 'Login de usuario', description: 'Autentica un usuario y retorna un token' })
   @ApiResponse({ status: 200, description: 'Usuario autenticado correctamente.' })
   @ApiResponse({ status: 401, description: 'Credenciales incorrectas.' })
-  @ApiBody({
-    type: LoginDto,
-    examples: {
-      default: {
-        summary: 'Ejemplo de login',
-        value: { email: 'string', contrasena: 'string' },
-      },
-    },
-  })
   async login(@Body() loginDto: LoginDto) {
     return this.authService.login(loginDto);
   }

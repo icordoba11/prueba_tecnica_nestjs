@@ -1,7 +1,5 @@
 import 'dotenv/config';
 import { DataSource } from 'typeorm';
-import { Factura } from './src/modules/factura/entities/factura.entity';
-import { FacturaDetalle } from './src/modules/factura-detalle/entities/factura-detalle.entity';
 
 export default new DataSource({
     type: 'mysql',
@@ -10,7 +8,8 @@ export default new DataSource({
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [__dirname + '/modules/**/*.entity{.ts,.js}'],
+    entities: [__dirname + '/**/*.entity{.ts,.js}'],
     migrations: ['src/migrations/*.ts'],
     synchronize: false,
 });
+
