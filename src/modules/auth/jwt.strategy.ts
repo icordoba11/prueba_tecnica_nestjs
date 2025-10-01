@@ -18,12 +18,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     }
 
     async validate(payload: any) {
-        // Verifica que sea un token de acceso
         if (payload.type !== 'access') {
             throw new UnauthorizedException('Invalid token type');
         }
 
-        // Verifica que el usuario aún existe
         const user = await this.userService.findOne(payload.sub);
         if (!user) {
             throw new UnauthorizedException('User not found');

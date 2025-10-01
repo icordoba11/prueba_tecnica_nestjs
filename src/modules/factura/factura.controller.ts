@@ -1,8 +1,10 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { FacturaService } from './factura.service';
 import { CreateFacturaDto } from './dto/crear-factura.dto';
-import { AgregarDetalleDto } from './dto/agregar-detalle-dto';
-import { ApiBearerAuth, ApiBody, ApiOperation, ApiResponse } from '@nestjs/swagger';
+
+import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { CrearDetalleDto } from './dto/crear-detalle.dto';
+import { AgregarFacturaDetalleDto } from './dto/agregar-detalle.dto';
 
 @ApiBearerAuth('JWT-auth')
 @Controller('facturas')
@@ -19,13 +21,12 @@ export class FacturaController {
   }
 
   @Post(':id/detalle')
-  @Post(':id/detalle')
   @ApiOperation({ summary: 'Agregar detalle a factura', description: 'Agrega un nuevo detalle a una factura existente' })
   @ApiResponse({ status: 200, description: 'Detalle agregado correctamente.' })
   @ApiResponse({ status: 400, description: 'Error en los datos enviados.' })
   addDetail(
     @Param('id') facturaId: number,
-    @Body() addDetailDto: AgregarDetalleDto,
+    @Body() addDetailDto: AgregarFacturaDetalleDto,
   ) {
     return this.facturaService.addDetail(facturaId, addDetailDto);
   }

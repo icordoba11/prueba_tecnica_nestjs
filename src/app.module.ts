@@ -4,7 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/usuario.module';
 import { FacturaModule } from './modules/factura/factura.module';
-import { FacturaDetalleModule } from './modules/factura-detalle/factura-detalle.module';
 import { APP_FILTER } from '@nestjs/core';
 import { AllExceptionsFilter } from './common/exceptions-filter';
 
@@ -30,7 +29,6 @@ import { AllExceptionsFilter } from './common/exceptions-filter';
     AuthModule,
     UserModule,
     FacturaModule,
-    FacturaDetalleModule
   ],
   providers: [
     {

@@ -4,7 +4,7 @@ import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/registro.dto';
 import { AuthService } from './auth.service';
 import { Public } from './decorators/publico.decorator';
-import { ApiBody, ApiOperation, ApiProperty, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @Controller('auth')
 export class AuthController {

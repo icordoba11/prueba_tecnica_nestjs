@@ -1,4 +1,4 @@
-import { BadRequestException, ConflictException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
+import { ConflictException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
@@ -56,7 +56,8 @@ export class UserService {
         await this.userRepository.remove(user);
     }
 
-    //Metodos llamado desde auth
+    //--------------------Metodos llamado desde auth-------------------------
+    
     async findRegisterEmail(email: string): Promise<Usuario | null> {
 
         const user = await this.userRepository.findOneBy({ email });

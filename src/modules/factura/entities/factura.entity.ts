@@ -1,5 +1,5 @@
 import { AuditEntity } from "src/common/audit.entity";
-import { FacturaDetalle } from "src/modules/factura-detalle/entities/factura-detalle.entity";
+import { FacturaDetalle } from "./factura-detalle.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -19,7 +19,6 @@ export class Factura extends AuditEntity {
 
     @OneToMany(() => FacturaDetalle, detalle => detalle.factura, {
         cascade: true,
-        eager: true
     })
     detalles: FacturaDetalle[];
 

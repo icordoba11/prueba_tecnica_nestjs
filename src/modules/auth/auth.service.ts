@@ -1,4 +1,3 @@
-// auth.service.ts
 import { Injectable, UnauthorizedException, BadRequestException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
@@ -117,14 +116,4 @@ export class AuthService {
     };
   }
 
-  async validateToken(token: string): Promise<Usuario> {
-    try {
-      const payload = this.jwtService.verify<{ sub: string; email: string }>(token);
-      const user = await this.userService.findOne(payload.sub);
-      if (!user) throw new UnauthorizedException('Usuario no encontrado');
-      return user;
-    } catch (error) {
-      throw new UnauthorizedException('Token inválido');
-    }
-  }
 }

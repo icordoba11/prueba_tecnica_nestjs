@@ -1,13 +1,14 @@
-import { Factura } from "src/modules/factura/entities/factura.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Factura } from "./factura.entity";
 
 @Entity('factura_detalle')
 export class FacturaDetalle {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    factura_id: number;
+    @ManyToOne(() => Factura, factura => factura.detalles, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'factura_id' })
+    factura: Factura;
 
     @Column()
     producto: string;
@@ -21,8 +22,5 @@ export class FacturaDetalle {
     @Column({ type: 'decimal', precision: 10, scale: 2 })
     subtotal: number;
 
-    @ManyToOne(() => Factura, factura => factura.detalles, { onDelete: 'CASCADE' })
-    @JoinColumn({ name: 'factura_id' })
-    factura: Factura;
 
 }
