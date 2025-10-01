@@ -1,9 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { FacturaService } from './factura.service';
 import { CreateFacturaDto } from './dto/crear-factura.dto';
-
 import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { CrearDetalleDto } from './dto/crear-detalle.dto';
 import { AgregarFacturaDetalleDto } from './dto/agregar-detalle.dto';
 
 @ApiBearerAuth('JWT-auth')

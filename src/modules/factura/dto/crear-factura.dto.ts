@@ -8,7 +8,7 @@ import { CrearDetalleDto } from "./crear-detalle.dto";
 export class CreateFacturaDto {
     @ApiProperty({ description: 'Nombre del cliente', example: 'string' })
     @IsString()
-    @IsNotEmpty()
+    @IsNotEmpty({ message: 'El campo cliente no puede estar vacio' })
     cliente: string;
 
     @ApiProperty({ description: 'Fecha de la factura', example: '2025-09-29' })
