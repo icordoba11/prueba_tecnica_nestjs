@@ -23,76 +23,46 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este proyecto es una **Prueba Técnica de Backend** desarrollada con **Node.js y NestJS** utilizando **MySQL** como base de datos. El objetivo principal es construir un **sistema de gestión de facturas y sus detalles**, exponiendo una **API REST segura** que cumpla con buenas prácticas de desarrollo, autenticación, manejo de errores y consistencia de datos.
+
+El sistema permite:
+
+- Crear, consultar, listar y eliminar facturas junto con sus detalles.
+- Agregar ítems individuales a facturas existentes.
+- Calcular automáticamente el total de la factura a partir de sus detalles.
+- Gestionar autenticación y autorización mediante JWT, asegurando que solo usuarios autenticados puedan acceder a las APIs.
+- Validar entradas y manejar errores de forma centralizada, devolviendo respuestas JSON claras con códigos HTTP adecuados.
+
+El proyecto está diseñado con una **arquitectura limpia y modular**, separando controladores, servicios y repositorios, e incluye **migraciones de base de datos** para la creación automática de tablas. Además, toda la documentación de la API se encuentra disponible a través de **Swagger** para facilitar su uso y pruebas.
+
 
 ## Project setup
 
 ```bash
+# Clonar repositorio
+$ git clone <repositorio-url>
+
+# Instalar dependencias
 $ pnpm install
 ```
 
-## Compile and run the project
-
+## Database setup
+Nota: Este proyecto está desarrollado y probado con **MySQL** usando **Workbench**.
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+# Crear base de datos mySql
 ```
 
-## Run tests
-
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+# Correr migracion
+$ pnpm run migration:run
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+## Run the project
 ```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
+# Levantar servidor en modo desarrollo
+$ pnpm start:dev
 ```
+## La documentación de la API está disponible en:
+http://localhost:3000/api/docs#/
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
