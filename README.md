@@ -48,9 +48,8 @@ $ pnpm install
 
 ## Database setup
 Nota: Este proyecto está desarrollado y probado con **MySQL** usando **Workbench**.
-```bash
-# Crear base de datos mySql
-```
+- Crear la base de datos en MySQL.
+- Cambiar las variables de entorno para conectar con la base de datos local.
 
 ```bash
 # Correr migracion
@@ -59,7 +58,11 @@ $ pnpm run migration:run
 
 ## Run the project
 ```bash
-# Levantar servidor en modo desarrollo
+# Levantar servidor
+$ pnpm start
+```
+```bash
+# Modo desarrollo
 $ pnpm start:dev
 ```
 ## La documentación de la API está disponible en:
